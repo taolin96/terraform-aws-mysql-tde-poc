@@ -1,3 +1,14 @@
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "taolin"
+
+    workspaces {
+      name = "terraform-aws-mysql-tde-poc"
+    }
+  }
+}
+
 provider "aws" {
   profile 	= var.AWS_PROFILE
   region 	= "ap-southeast-2"
